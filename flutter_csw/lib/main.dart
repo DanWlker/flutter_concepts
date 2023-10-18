@@ -49,18 +49,14 @@ class _MyHomePageState extends State<MyHomePage> {
             floatingActionButton: FloatingActionButton(onPressed: () {
               context.read<ProviderStorer>().articleSection?.refresh();
             }),
-            body: CustomScrollView(
-              slivers: [
-                const SliverToBoxAdapter(
-                  child: ArticleSectionWidget(),
-                ),
-                const SliverToBoxAdapter(
-                  child: ContactUsSectionWidget(),
-                ),
-                const SliverToBoxAdapter(
-                  child: NewsSectionWidget(),
-                ),
-                SliverList.builder(
+            // ListView will built ListView.builder items all at once when even one scrolls into view (since shrinkwrap)
+            body: ListView(
+              children: [
+                const ArticleSectionWidget(),
+                const ContactUsSectionWidget(),
+                const NewsSectionWidget(),
+                ListView.builder(
+                  shrinkWrap: true,
                   itemCount: 9,
                   itemBuilder: (context, index) {
                     print('building item pink $index');
@@ -71,7 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                 ),
-                SliverList.builder(
+                ListView.builder(
+                  shrinkWrap: true,
                   itemCount: 9,
                   itemBuilder: (context, index) {
                     print('building item orange $index');
@@ -82,13 +79,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                 ),
-                const SliverToBoxAdapter(
-                  child: PromotionSectionWidget(),
-                ),
-                const SliverToBoxAdapter(
-                  child: VideoSectionWidget(),
-                ),
-                SliverList.builder(
+                const PromotionSectionWidget(),
+                const VideoSectionWidget(),
+                ListView.builder(
+                  shrinkWrap: true,
                   itemCount: 9,
                   itemBuilder: (context, index) {
                     print('building item blue $index');
@@ -98,9 +92,54 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.blue[index * 100],
                     );
                   },
-                ),
+                )
               ],
             ),
+
+            // Uncomment this section to see that SliverList items are only built when each individual items are
+            // scrolled into view.
+            // body: CustomScrollView(
+            //   slivers: [
+            //     const SliverToBoxAdapter(child: ArticleSectionWidget()),
+            //     const SliverToBoxAdapter(child: ContactUsSectionWidget()),
+            //     const SliverToBoxAdapter(child: NewsSectionWidget()),
+            //     SliverList.builder(
+            //       itemCount: 9,
+            //       itemBuilder: (context, index) {
+            //         print('building item pink $index');
+            //         return Container(
+            //           height: 50,
+            //           width: 60,
+            //           color: Colors.pink[index * 100],
+            //         );
+            //       },
+            //     ),
+            //     SliverList.builder(
+            //       itemCount: 9,
+            //       itemBuilder: (context, index) {
+            //         print('building item orange $index');
+            //         return Container(
+            //           height: 50,
+            //           width: 60,
+            //           color: Colors.orange[index * 100],
+            //         );
+            //       },
+            //     ),
+            //     const SliverToBoxAdapter(child: PromotionSectionWidget()),
+            //     const SliverToBoxAdapter(child: VideoSectionWidget()),
+            //     SliverList.builder(
+            //       itemCount: 9,
+            //       itemBuilder: (context, index) {
+            //         print('building item blue $index');
+            //         return Container(
+            //           height: 50,
+            //           width: 60,
+            //           color: Colors.blue[index * 100],
+            //         );
+            //       },
+            //     ),
+            //   ],
+            // ),
           );
         });
   }
