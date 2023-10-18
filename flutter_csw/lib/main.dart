@@ -55,15 +55,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 const ArticleSectionWidget(),
                 const ContactUsSectionWidget(),
                 const NewsSectionWidget(),
+                // When scrolling up again notice the widget above gets rebuild
                 ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  itemCount: 9,
+                  itemCount: 90,
                   itemBuilder: (context, index) {
                     print('building item pink $index');
                     return Container(
                       height: 50,
                       width: 60,
-                      color: Colors.pink[index * 100],
+                      color: Colors.pink[index % 9 * 100],
                     );
                   },
                 ),
@@ -103,14 +105,15 @@ class _MyHomePageState extends State<MyHomePage> {
             //     const SliverToBoxAdapter(child: ArticleSectionWidget()),
             //     const SliverToBoxAdapter(child: ContactUsSectionWidget()),
             //     const SliverToBoxAdapter(child: NewsSectionWidget()),
+            //     // Notice for CustomScrollView, the top items doesn't get rebuilt even when the list is huge
             //     SliverList.builder(
-            //       itemCount: 9,
+            //       itemCount: 180,
             //       itemBuilder: (context, index) {
             //         print('building item pink $index');
             //         return Container(
             //           height: 50,
             //           width: 60,
-            //           color: Colors.pink[index * 100],
+            //           color: Colors.pink[index % 9 * 100],
             //         );
             //       },
             //     ),
