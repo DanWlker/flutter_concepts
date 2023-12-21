@@ -25,9 +25,9 @@
     class Logger {
         static final Map<String, Logger> _cache =
         <String, Logger>{};
-        
+
         final String name;
-        
+
         // Factory constructor that returns a cached copy,
         // or creates a new one if it's not yet available.
         // Focus on this line and what its doing
@@ -57,7 +57,7 @@
 
     extension ExtendedPerson on Person {
             static Person create(String firstName, String lastName) {
-            return Person("$firstName $lastName");  
+            return Person("$firstName $lastName");
             }
     }
 
@@ -146,6 +146,26 @@
                 yield i;
             }
         }
+    ```
+
+24. Dart 3 pattern matching and records full possibilities:
+    ```dart
+    String getTimePassedDescription(DateTime fromDate) {
+
+        final difference = DateTime.now().difference(fromDate);
+
+        final (Duration(:inSeconds, :inMinutes, :inHours, :inDays), inMonths) = (difference, (difference.inDays / 30).round());
+
+        getSIfRequired(int value) => value == 1 ? 's' : '';
+
+        return switch (inSeconds) {
+            < 60 => 'now',
+            < 3600 => '$inMinutes minute${getSIfRequired(inMinutes)} ago',
+            < 86400 => '$inHours hour${getSIfRequired(inHours)} ago',
+            < 2592000 => '$inDays day${getSIfRequired(inDays)} ago',
+            _ => '$inMonths month${getSIfRequired(inMonths)} ago'
+        };
+    }
     ```
 
 ### Firebase Analytics Troubleshooting
