@@ -148,7 +148,7 @@
         }
     ```
 
-24. Dart 3 pattern matching and records full possibilities:
+24. Dart 3 pattern matching and records possibilities, with a [Guard clause](https://dart.dev/language/branches#guard-clause) example as well:
     ```dart
     String getTimePassedDescription(DateTime fromDate) {
 
@@ -158,7 +158,10 @@
 
         getSIfRequired(int value) => value == 1 ? 's' : '';
 
+        var randomEasterEgg = Random().nextInt(100);
+
         return switch (inSeconds) {
+            < 60 when randomEasterEgg > 98 => 'quite possibly.. just did it',
             < 60 => 'now',
             < 3600 => '$inMinutes minute${getSIfRequired(inMinutes)} ago',
             < 86400 => '$inHours hour${getSIfRequired(inHours)} ago',
@@ -167,6 +170,7 @@
         };
     }
     ```
+25. For more pattern matching possibilities, read these: [Branches](https://dart.dev/language/branches), [Patterns](https://dart.dev/language/patterns), [Pattern types](https://dart.dev/language/pattern-types)
 
 ### Firebase Analytics Troubleshooting
 
