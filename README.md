@@ -68,7 +68,7 @@
 
 9. You can use generics to restrict your code to a family of types using extends. This ensures that your class is instantiated with a generic type that extends a specific type ex. `<T extends num>`
 10. Any exception that occurs in the `async` function can be handled in the same way as handling a failed Future, using the `catchError` method.
-11. [Read this](https://dart.dev/guides/language/coming-from/swift-to-dart) and [this](https://dart.dev/language/enums#declaring-enhanced-enums)
+11. [Coming from swift to dart](https://dart.dev/guides/language/coming-from/swift-to-dart) and [Enhanced Enums](https://dart.dev/language/enums#declaring-enhanced-enums)
 12. [Don't use build context in async code, if needed, cache what needs to be retrieved at the top part of the function call before you run the async code, then use .then maybe](https://youtu.be/bzWaMpD1LHY)
 13. [You can run expensive functions that depend on a .of value inside didChangeDependencies](https://youtu.be/og-vJqLzg2c)
 14. [Why type promotion sometimes doesn't work](https://youtu.be/2Cl0C-9dK48), [this too](https://stackoverflow.com/a/56764992), ~note although there's a way in the video to ensure it works, it opens you to errors~ (Edit: [you can use the same name for the variables in local scope, this also states non promotion reason, and a tip: When creating a local variable to hold a field’s value, make the variable final. That way, you can’t accidentally update the local variable when you intend to update the field.](https://dart.dev/tools/non-promotion-reasons))
