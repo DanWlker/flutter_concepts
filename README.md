@@ -171,6 +171,7 @@
     }
     ```
 25. For more pattern matching possibilities, read these: [Branches](https://dart.dev/language/branches), [Patterns](https://dart.dev/language/patterns), [Pattern types](https://dart.dev/language/pattern-types)
+26. [Dart's notion of "private methods" and why its different](https://stackoverflow.com/questions/57798124/should-subclasses-inherit-private-mixin-variables-in-dart). The short of it is, private names are private to that "library"
 
 ### Firebase Analytics Troubleshooting
 
