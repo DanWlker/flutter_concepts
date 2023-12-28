@@ -172,6 +172,7 @@
     ```
 25. For more pattern matching possibilities, read these: [Branches](https://dart.dev/language/branches), [Patterns](https://dart.dev/language/patterns), [Pattern types](https://dart.dev/language/pattern-types)
 26. [Dart's notion of "private methods" and why its different](https://stackoverflow.com/questions/57798124/should-subclasses-inherit-private-mixin-variables-in-dart). The short of it is, private names are private to that "library"
+27. Always remember the order in which you declare mixins, this is very important because it decides which class is more important. If mixins contains identical methods then the mixin class that is declared later will be executed(Declaring a mixin after another raises its “Importance”). [What happens when multiple mixins have the same method or field declaration](https://medium.com/flutter-community/https-medium-com-shubhamhackzz-dart-for-flutter-mixins-in-dart-f8bb10a3d341)
 
 ### Firebase Analytics Troubleshooting
 
