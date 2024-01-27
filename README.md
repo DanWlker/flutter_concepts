@@ -179,6 +179,13 @@
         if(data case Circle(radius: var rad) when rad == 1)
             return true;
     ```
+30. Instead of using `['A', 'B'].contains(yourStringVariable)`, we can use pattern matching:
+    ```dart
+      if(randomString case 'hello' || 'something' || 'this') {
+        // do stuff
+      }
+    ```
+
 
 ### Firebase Analytics Troubleshooting
 
