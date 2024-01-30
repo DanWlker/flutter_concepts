@@ -185,7 +185,7 @@
         // do stuff
       }
     ```
-31. [How flutter works under the hood](https://m.youtube.com/watch?v=dkyY9WCGMi0) [Personal Notes](./other_readmes/how_flutter_works_under_the_hood.md)
+31. [How flutter works under the hood](https://m.youtube.com/watch?v=dkyY9WCGMi0) [Personal Notes](./other_readmes/how_flutter_works_under_the_hood/how_flutter_works_under_the_hood.md)
 
 
 ### Firebase Analytics Troubleshooting
