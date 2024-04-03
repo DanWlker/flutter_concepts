@@ -188,3 +188,4 @@
         // do stuff
       }
     ```
+31. [Never for unreachable code](https://dart.dev/null-safety/understanding-null-safety#never-for-unreachable-code) allows for improved flow analysis
