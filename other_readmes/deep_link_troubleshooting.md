@@ -53,6 +53,7 @@
     ```
 
 8. [iOS universal links must be in https](https://stackoverflow.com/a/42190104), refer this as as a [backup link](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html)
+9. [Apple has some limitations for universal links, such as when navigating to the same domain without opening a new tab, deeplink will not be triggered](https://stackoverflow.com/a/78113039), [and this](https://stackoverflow.com/a/52480037). One of the ways to fix this is by opening a new tab for the link.
 
 ## Android
 
