@@ -46,7 +46,8 @@
         return false
     }
     print("path = \(incomingURL)")
-    self.flutterViewController?.pushRoute("\(incomingURL)")
+    // Re-encoding is required because for some reason pushRoute auto converts the encoded % characters
+    self.flutterViewController?.pushRoute(incomingURL.absoluteString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")
 
     return true
     }
