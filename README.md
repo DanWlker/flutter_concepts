@@ -1,4 +1,4 @@
-# flutter_concepts
+# Flutter Concepts
 
 1. [Dart Tips](./other_readmes/dart_tips.md)
 2. [How Flutter Works Under The Hood](./other_readmes/how_flutter_works_under_the_hood/how_flutter_works_under_the_hood.md)
